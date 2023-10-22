@@ -28,7 +28,7 @@ public class ClientAndPlanetDao {
 
     public <T> List<T> findByName (Class<T> entityClass, String name){
         try (Session session = sessionFactory.openSession()){
-            @SuppressWarnings("JpaQlInspection") Query<T> query = session.createQuery("FROM " + entityClass.getSimpleName() + " WHERE name = :name");
+            @SuppressWarnings ("JpaQlInspection") Query<T> query = session.createQuery("FROM " + entityClass.getSimpleName() + " WHERE name = :name");
             query.setParameter("name", name);
             return query.list();
         }
