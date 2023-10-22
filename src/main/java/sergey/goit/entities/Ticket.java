@@ -1,7 +1,6 @@
 package sergey.goit.entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,7 +23,7 @@ public class Ticket {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id", nullable = false)
-    private Clients clientId;
+    private Client clientId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_planet_id", referencedColumnName = "id")
@@ -46,11 +45,11 @@ public class Ticket {
         return created_at;
     }
 
-    public Clients getClientId() {
+    public Client getClientId() {
         return clientId;
     }
 
-    public void setClientId(Clients clientId) {
+    public void setClientId(Client clientId) {
         this.clientId = clientId;
     }
 

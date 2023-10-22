@@ -2,10 +2,9 @@ package sergey.goit.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import sergey.goit.entities.Clients;
+import sergey.goit.entities.Client;
 import sergey.goit.entities.Planet;
 import sergey.goit.entities.Ticket;
-
 
 public class HibernateUtil implements AutoCloseable{
     private static final HibernateUtil INSTANCE;
@@ -18,7 +17,7 @@ public class HibernateUtil implements AutoCloseable{
 
     private HibernateUtil() {
         sessionFactory = new Configuration()
-                .addAnnotatedClass(Clients.class)
+                .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Planet.class)
                 .addAnnotatedClass(Ticket.class)
                 .buildSessionFactory();

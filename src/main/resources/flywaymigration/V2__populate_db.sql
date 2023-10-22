@@ -1,4 +1,4 @@
-INSERT INTO `clients` VALUES
+insert into clients (id, name) values
 (1, 'Вася Пупкин'),
 (2, 'Коля Подубцев'),
 (3, 'Прораб Петя'),
@@ -10,14 +10,14 @@ INSERT INTO `clients` VALUES
 (9, 'Олег Газманов'),
 (10, 'Филя Киркоров');
 
-INSERT INTO `planet` VALUES
+insert into planet (id, name) values
 ('MRS', 'MARS'),
 ('VEN', 'Venus'),
 ('EAR', 'Earth'),
 ('JUP', 'Jupiter'),
 ('SAT', 'Saturn');
 
-INSERT INTO `ticket` VALUES
+insert into ticket (id, created_at, client_id, from_planet_id, to_planet_id) values
 (1, CURRENT_TIMESTAMP, 1, 'MRS', 'VEN'),
 (2, CURRENT_TIMESTAMP, 2, 'EAR', 'JUP'),
 (3, CURRENT_TIMESTAMP, 1, 'VEN', 'SAT'),

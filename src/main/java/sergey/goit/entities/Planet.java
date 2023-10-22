@@ -1,7 +1,6 @@
 package sergey.goit.entities;
 
 import jakarta.persistence.*;
-
 import java.util.Set;
 
 
@@ -53,5 +52,13 @@ public class Planet {
 
     public void setToPlanet(Set<Ticket> toPlanet) {
         this.toPlanet = toPlanet;
+    }
+
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

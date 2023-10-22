@@ -1,37 +1,46 @@
 package sergey.goit;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import sergey.goit.entities.Clients;
+import sergey.goit.entities.Client;
+import sergey.goit.entities.Planet;
+import sergey.goit.service.ClientCrudService;
+import sergey.goit.service.PlanetCrudService;
 import sergey.goit.utils.Flyway;
-import sergey.goit.utils.HibernateUtil;
 
 public class Main {
+
     public static void main(String[] args) {
-       try(HibernateUtil instance = HibernateUtil.getInstance();
-        SessionFactory sessionFactory = instance.getSessionFactory();
-           Session session = sessionFactory.openSession()){
+        Flyway.flywayMigration();
 
-//            Clients personCreaet = new Clients();
-//           personCreaet.setName("Vasy");
-//        List<Person> person = session.createQuery("From Person p WHERE p.id = :id")
-//                .setParameter("id", "4")
-//                .list();
-//        Person persondelete = person.get(0);
+        ClientCrudService ccs = new ClientCrudService();
+        PlanetCrudService pcs = new PlanetCrudService();
+        Client client = new Client();
+        client.setName("TEST TEST");
+        Client newClient = new Client();
+        newClient.setName("New Earth 10");
+        newClient.setId(12L);
+        ccs.saveClient(client);
+        System.out.println("OLD " + ccs.findClientById(12L));
+        ccs.updateClient(newClient);
+        System.out.println("NEW " + ccs.findClientById(12L));
+        ccs.deleteClient(newClient);
 
-
-           Transaction transaction = session.beginTransaction();
-//           session.persist(personCreaet);
-//           for (Person person1:persondelete){
-//               System.out.println(person1.getName());
-//           }
-//           session.persist(personCreaet);
-           Flyway.flywayMigration();
-           transaction.commit();
+        System.out.println(ccs.findClientByName("New Earth 10"));
+        ccs.deleteName("New Earth 10");
 
 
+        Planet planet = new Planet();
+        Planet planetNew = new Planet();
+        planet.setId("EA2");
+        planet.setName("EART 1");
+        planetNew.setId("EA2");
+        planetNew.setName("New Earth 10");
+        pcs.savePlanet(planet);
+        System.out.println("OLD " + pcs.findPlanetById("EA1"));
+        pcs.updatePlanet(planetNew);
+        System.out.println("NEW " + pcs.findPlanetById("EA1"));
+        pcs.deletePlanet(planetNew);
 
+        System.out.println(pcs.findPlanetByName("New Earth 10"));
+        pcs.deleteName("New Earth 10");
     }
-}
 }
