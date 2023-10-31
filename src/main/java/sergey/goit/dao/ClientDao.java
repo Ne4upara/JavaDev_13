@@ -4,59 +4,59 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import sergey.goit.entities.Client;
 import sergey.goit.utils.HibernateUtil;
 
 import java.util.List;
 
-public class ClientAndPlanetDao {
+public class ClientDao {
 
     private SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
 
-    public <T> void save(T entity) {
+    public void save(Client client) {
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
-            session.persist(entity);
+            session.persist(client);
             tx.commit();
         }
     }
 
-    public <T, ID> T findById(Class<T> entityCLass, ID id) {
+    public Client findById(Long id) {
         try (Session session = sessionFactory.openSession()) {
-            return session.get(entityCLass, id);
+            return session.get(Client.class, id);
         }
     }
 
-    public <T> List<T> findByName (Class<T> entityClass, String name){
-        try (Session session = sessionFactory.openSession()){
-            @SuppressWarnings("JpaQlInspection") Query<T> query = session.createQuery("FROM " + entityClass.getSimpleName() + " WHERE name = :name");
+    public List findByName(String name) {
+        try (Session session = sessionFactory.openSession()) {
+            Query<Client> query = session.createQuery("FROM Client WHERE name = :name");
             query.setParameter("name", name);
             return query.list();
         }
     }
 
-
-    public <T> void update(T entity) {
+    public void update(Client client) {
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
-            session.merge(entity);
+            session.merge(client);
             tx.commit();
         }
     }
 
-    public <T> void delete(T entity) {
+    public void delete(Client client) {
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
-            session.remove(entity);
+            session.remove(client);
             tx.commit();
         }
     }
 
-    public  <T> void deletaByName (Class<T> entityClass, String name){
-        List <T> nameDelete = findByName(entityClass, name);
-        try (Session session = sessionFactory.openSession()){
+    public void deletaByName(String name) {
+        List nameDelete = findByName(name);
+        try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
-            for (T entity : nameDelete){
-                session.remove(entity);
+            for (Object o : nameDelete) {
+                session.remove(o);
             }
             tx.commit();
         }

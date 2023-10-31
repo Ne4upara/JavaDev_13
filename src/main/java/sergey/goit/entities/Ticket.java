@@ -1,35 +1,36 @@
 package sergey.goit.entities;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table (name = "ticket")
+@Table(name = "ticket")
 public class Ticket {
 
     @Id
     @SequenceGenerator(name = "ticketgenerator", sequenceName = "ticketgenerator", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ticketgenerator")
-    @Column (name = "id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "created_at", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime created_at;
+    private LocalDateTime createAt;
 
-    public Ticket(){
-        this.created_at = LocalDateTime.now();
+    public Ticket() {
+        this.createAt = LocalDateTime.now();
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id", nullable = false)
     private Client clientId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "from_planet_id", referencedColumnName = "id", nullable = false)
     private Planet fromPlanet;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "to_planet_id", referencedColumnName = "id", nullable = false)
     private Planet toPlanet;
 
@@ -41,8 +42,8 @@ public class Ticket {
         this.id = id;
     }
 
-    public LocalDateTime getCreated_at() {
-        return created_at;
+    public LocalDateTime getCreateAt() {
+        return createAt;
     }
 
     public Client getClientId() {
@@ -67,5 +68,15 @@ public class Ticket {
 
     public void setToPlanet(Planet toPlanet) {
         this.toPlanet = toPlanet;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "id = " + id +
+                        ", createAt = " + createAt +
+                        ", " + clientId +
+                        ", From " + fromPlanet +
+                        ", To " + toPlanet;
     }
 }

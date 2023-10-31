@@ -1,35 +1,36 @@
 package sergey.goit.service;
 
-import sergey.goit.dao.ClientAndPlanetDao;
+import sergey.goit.dao.ClientDao;
+import sergey.goit.dao.PlanetDao;
 import sergey.goit.entities.Planet;
 
 import java.util.List;
 
 public class PlanetCrudService {
 
-    private ClientAndPlanetDao clientAndPlanetDao = new ClientAndPlanetDao();
+    private PlanetDao planetDao = new PlanetDao();
 
-    public void savePlanet (Planet planet){
-        clientAndPlanetDao.save(planet);
+    public void savePlanet(Planet planet) {
+        planetDao.save(planet);
     }
 
-    public Planet findPlanetById (String id){
-        return clientAndPlanetDao.findById(Planet.class,id);
+    public Planet findPlanetById(String id) {
+        return planetDao.findById(id);
     }
 
-    public void updatePlanet(Planet planet){
-        clientAndPlanetDao.update(planet);
+    public void updatePlanet(Planet planet) {
+        planetDao.update(planet);
     }
 
-    public void deletePlanet(Planet planet){
-        clientAndPlanetDao.delete(planet);
+    public void deletePlanet(Planet planet) {
+        planetDao.delete(planet);
     }
 
-    public List<Planet> findPlanetByName(String name){
-        return clientAndPlanetDao.findByName(Planet.class,name);
+    public List<Planet> findPlanetByName(String name) {
+        return planetDao.findByName(name);
     }
 
-    public void deleteName (String name){
-        clientAndPlanetDao.deletaByName(Planet.class, name);
+    public void deleteName(String name) {
+        planetDao.deletaByName(name);
     }
 }

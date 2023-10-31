@@ -47,10 +47,19 @@ public class Main {
 //        pcs.deleteName("New Earth 10");
 
         Ticket ticket= new Ticket();
-        ticket.setClientId(ccs.findClientById(9L));
+        Ticket ticket1 = new Ticket();
+        ticket.setClientId(ccs.findClientById(45L));
         ticket.setFromplanet(pcs.findPlanetById("MRS"));
         ticket.setToPlanet(pcs.findPlanetById("SAT"));
-        tcs.save(ticket);
-
+//        tcs.save(ticket);
+//        System.out.println(tcs.findById(1L));
+//        ticket1.setId(7L);
+//        ticket1.setClientId(ccs.findClientById(9L));
+//        ticket1.setFromplanet(pcs.findPlanetById("MRS"));
+//        ticket1.setToPlanet(pcs.findPlanetById("SAT"));
+//        System.out.println(ticket.getId());
+//        tcs.updateTicket(ticket);
+//        tcs.deleteTicket(ticket1);
+        System.out.println(tcs.findTicketByName(9L));
     }
 }
