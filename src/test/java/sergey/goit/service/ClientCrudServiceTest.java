@@ -4,6 +4,8 @@ package sergey.goit.service;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import sergey.goit.entities.Client;
@@ -22,14 +24,21 @@ public class ClientCrudServiceTest {
     public void setup() {
         sessionFactory = HibernateUtil.getInstance().getSessionFactory();
     }
+//    @AfterClass
+//    public void cleanup() {
+//        if (sessionFactory != null) {
+//            sessionFactory.close();
+//        }
+//    }
 
     @Test
     public void saveClientTest() {
-        Client client = new Client();
-        client.setName("Vasy");
+
 
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
+            Client client = new Client();
+            client.setName("Vasy");
             new ClientCrudService().saveClient(client);
             Long clientId = client.getId();
             assertNotNull(clientId);

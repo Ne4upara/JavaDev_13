@@ -26,11 +26,11 @@ public class Ticket {
     private Client clientId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "from_planet_id", referencedColumnName = "id")
+    @JoinColumn(name = "from_planet_id", referencedColumnName = "id", nullable = false)
     private Planet fromPlanet;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "to_planet_id", referencedColumnName = "id")
+    @JoinColumn(name = "to_planet_id", referencedColumnName = "id", nullable = false)
     private Planet toPlanet;
 
     public Long getId() {
