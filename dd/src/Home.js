@@ -29,7 +29,7 @@ const Home = () => {
                     {imagesData.map((image) => (
                         <div key={image.id} className='team-member'>
                             <img src={image.src} alt={image.alt}
-                                style={{ width: '100px', height: '100px' }} />
+                                style={{ width: '150px', height: '150px' }} />
                             <span>{image.name}</span>
                             <span>{image.role}</span>
                         </div>
