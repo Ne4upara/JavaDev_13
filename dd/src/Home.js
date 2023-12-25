@@ -26,32 +26,38 @@ const Home = () => {
             <div className='App-team'>
                 <h3>Учасники команди</h3>
                 <div className='App-team-info'>
-                    {imagesData.map((image) => (                        
-                    <div key={image.id} className='team-member'>
-                        <img  src={image.src} alt={image.alt}
-                        style={{ width: '100px', height: '100px' }} />
+                    {imagesData.map((image) => (
+                        <div key={image.id} className='team-member'>
+                            <img src={image.src} alt={image.alt}
+                                style={{ width: '100px', height: '100px' }} />
                             <span>{image.name}</span>
-                            <span>{image.role}</span>    
-                        </div>    
+                            <span>{image.role}</span>
+                        </div>
                     ))}
                 </div>
             </div>
             <div >
                 <ul className='buttons'>
                     <li>
-                        <button>
-                            <a href="/login">Login</a>
-                        </button>
+                        <a href="/login">
+                            <button>
+                                Login
+                            </button>
+                        </a>
                     </li>
                     <li>
-                        <button>
-                            <a href="/register">Register</a>
-                        </button>
+                        <a href="/register">
+                            <button>
+                                Register
+                            </button>
+                        </a>
                     </li>
                     <li>
-                        <button>
-                            <a href="/viewAll">View All</a>
-                        </button>
+                        <a href="/viewAll">
+                            <button>
+                                View All
+                            </button>
+                        </a>
                     </li>
                 </ul>
             </div>
