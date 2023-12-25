@@ -1,7 +1,7 @@
 .divWithImage {
     display: flex;
     align-items: center;
-    margin-bottom: 50px; /* Добавьте отступ между изображениями */
+    margin: 50px 0; /* Добавьте отступ между изображениями */
 }
 
 /* Опциональные стили для изображений */
