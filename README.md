@@ -2,7 +2,7 @@ Home Work 13
 
 Налаштований проєкт з hibernate (PostgreSQL, Flyway).
 Створена міграція та наповнення БД.
-CRUD сервіси для Client та Planet.
+CRUD сервіси для Client, Planet i Ticket.
 
 Диаграма проєкту
 
