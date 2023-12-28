@@ -50,7 +50,7 @@ button {
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -59,10 +59,15 @@ button {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
-  color: #61dafb;
+  color: #380fcf;
+  font-size: 24px;
+  font-weight: 700;
+      &:hover {
+      scale: 1.2;
+    }
 }
 
 @keyframes App-logo-spin {
@@ -74,25 +79,62 @@ button {
   }
 }
 
+.App-layout {
+  width: 100vw;
+  height: 100vh; 
+}
+
+.App-header {
+  position: fixed;
+  width: 100vw;
+  height: 70px;
+  background-color: #9cb1ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.App-footer {
+  width: 100vw;
+  height: 70px;
+  background-color: #9cb1ff;
+  text-align: center;
+  line-height: 70px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
 .App-container {
+  padding-top: 100px;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
-  padding-top: 50px;
-  background-color: bisque;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.About-info {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .App-Title {
   text-align: center;  
-  margin-bottom: 50px;
   font-size: 36px;
 }
 
 .App-command {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  align-items: center;
+  /* margin-top: 50px; */
 }
 
 .App-team {
@@ -100,7 +142,7 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .App-team-info {
@@ -109,6 +151,7 @@ button {
   grid-template-rows: repeat(2, 1fr);    
   gap: 16px; 
   margin-top: 50px;
+    text-align: center;
 }
 
 .team-member {
@@ -121,17 +164,59 @@ button {
 
 .buttons {
   display: flex;
-  gap: 10px;
-  margin-bottom: 50px;
+  gap: 20px;
+  
+}
+
+.button {
+  padding: 8px;
+  border-radius: 50px;
+  background-color: #2501ff;
+  color: aliceblue;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  &:hover {
+    scale: 1.2;
+  }    
+}
+
+  .Auth-title {
+      color: #9cb1ff;
+      text-transform: uppercase;
+      margin-bottom: 20px;
   }
 
-  .buttons li button {
-    width: 100px;
-    padding: 8px;
-    border-radius: 10px;
-    background-color:aquamarine;
-    text-decoration: none;
+  .Form {
+    display: flex;
+    flex-direction: column;
   }
+  
+  .Form-label {
+    display: flex; 
+    flex-direction: column;
+  }
+  
+  .Form-label p {
+  color: #380fcf;
+  font-size: 16px; 
+  font-weight: bold;
+  margin-bottom: 5px;
+  }
+  .Form-label input {
+    font-size: 16px; 
+  background-color: #ecf2ff; 
+  border: none; 
+  outline: none;
+  }
+
+.Auth-text {
+  margin-top: 20px;
+
+}
+
 
   a {
     text-decoration: none;

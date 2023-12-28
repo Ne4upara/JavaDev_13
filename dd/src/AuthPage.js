@@ -25,17 +25,19 @@ const AuthPage = () => {
                 setError('Пароль должен быть не менее 8 символов');
             }
         } catch (error) {
-            console.error('Произошла неожиданная ошибка при регистрации', error.response?.data || error.message);
-            setError('Произошла неожиданная ошибка при регистрации');
+            console.error('Произошла неожиданная ошибка при авторизации', error.response?.data || error.message);
+            setError('Произошла неожиданная ошибка при авторизации');
         }
     };
 
     return (
-        <div>
-            <h1>Login Page</h1>
-            <form>
-                <label>
+        <div className='App-container'>
+            <h1 className='Auth-title'>Login</h1>
+            <form className='Form'>
+                <label className='Form-label'>
+                    <p>
                     Username:
+                    </p>
                     <input
                         type="text"
                         value={username}
@@ -43,8 +45,10 @@ const AuthPage = () => {
                     />
                 </label>
                 <br/>
-                <label>
+                <label className='Form-label'>
+                    <p>
                     Password:
+                    </p>
                     <input
                         type="password"
                         value={password}
@@ -52,12 +56,12 @@ const AuthPage = () => {
                     />
                 </label>
                 <br/>
-                <button type="button" onClick={handleLogin}>
+                <button type="button" onClick={handleLogin} className='button'>
                     Login
                 </button>
             </form>
             {error && <p>{error}</p>}
-            <p>
+            <p className='Auth-text'>
                 Нет аккаунта? <Link to="/register">Зарегистрируйтесь</Link>.
             </p>
         </div>

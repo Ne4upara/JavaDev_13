@@ -27,7 +27,7 @@ const ViewAllPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className='App-container'>
             <h1>View All Page</h1>
             {error && <p>{error}</p>}
             {data.map((item, index) => (

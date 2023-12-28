@@ -40,11 +40,14 @@ const RegistrationPage = () => {
     };
 
     return (
-        <div>
-            <h1>Registration Page</h1>
-            <form>
-                <label>
+        <div className='App-container'>
+            <h1 className='Auth-title'>Registration</h1>
+            <form className='Form'>
+                <label className='Form-label'>
+                    <p>
+
                     Username:
+                    </p>
                     <input
                         type="text"
                         value={username}
@@ -52,8 +55,12 @@ const RegistrationPage = () => {
                     />
                 </label>
                 <br />
-                <label>
+                <label className='Form-label'>
+                    <p>
+
                     Password:
+                    </p>
+                    
                     <input
                         type="password"
                         value={password}
@@ -61,8 +68,11 @@ const RegistrationPage = () => {
                     />
                 </label>
                 <br />
-                <label>
+                <label className='Form-label'>
+                    <p>
+
                     Confirm Password:
+                    </p>
                     <input
                         type="password"
                         value={confirmPassword}
@@ -70,12 +80,12 @@ const RegistrationPage = () => {
                     />
                 </label>
                 <br />
-                <button type="button" onClick={handleRegistration}>
+                <button type="button" onClick={handleRegistration} className='button'>
                     Register
                 </button>
             </form>
             {error && <p>{error}</p>}
-            <p>
+            <p className='Auth-text'>
                 Уже есть аккаунт? <Link to="/login">Войдите</Link>.
             </p>
         </div>

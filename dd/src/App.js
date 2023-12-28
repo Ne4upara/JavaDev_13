@@ -6,15 +6,18 @@ import RegistrationPage from './RegistrationPage';
 import ViewAllPage from './ViewAllPage';
 import './App.css'
 import './styles/divWithImage.css'
+import About from './About';
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path='/' index element={<Home />} />
-                <Route path="/login" element={<AuthPage />} />
-                <Route path="/register" element={<RegistrationPage />} />
-                <Route path="/viewAll" element={<ViewAllPage />} />
+                <Route path='/' element={<Home />}>
+                    <Route path="about" element={<About />} />
+                    <Route path="login" element={<AuthPage />} />
+                    <Route path="register" element={<RegistrationPage />} />
+                    <Route path="viewAll" element={<ViewAllPage />} />
+                </Route>
             </Routes>
 
         </Router>
