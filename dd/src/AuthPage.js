@@ -36,7 +36,7 @@ const AuthPage = () => {
             <form className='Form'>
                 <label className='Form-label'>
                     <p>
-                    Username:
+                        Username:
                     </p>
                     <input
                         type="text"
@@ -44,10 +44,10 @@ const AuthPage = () => {
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <label className='Form-label'>
                     <p>
-                    Password:
+                        Password:
                     </p>
                     <input
                         type="password"
@@ -55,7 +55,7 @@ const AuthPage = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
-                <br/>
+                <br />
                 <button type="button" onClick={handleLogin} className='button'>
                     Login
                 </button>

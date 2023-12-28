@@ -45,8 +45,7 @@ const RegistrationPage = () => {
             <form className='Form'>
                 <label className='Form-label'>
                     <p>
-
-                    Username:
+                        Username:
                     </p>
                     <input
                         type="text"
@@ -57,10 +56,8 @@ const RegistrationPage = () => {
                 <br />
                 <label className='Form-label'>
                     <p>
-
-                    Password:
+                        Password:
                     </p>
-                    
                     <input
                         type="password"
                         value={password}
@@ -70,8 +67,7 @@ const RegistrationPage = () => {
                 <br />
                 <label className='Form-label'>
                     <p>
-
-                    Confirm Password:
+                        Confirm Password:
                     </p>
                     <input
                         type="password"
