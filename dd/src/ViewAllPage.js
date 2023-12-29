@@ -56,10 +56,10 @@ const ViewAllPage = () => {
                 <div key={item.id} className='Info-all'>
                     <div className='info-text'>
                     <span><a href={item.originalUrl}>{item.originalUrl}</a></span>
-                    <p className='visit-count'><BsEye /> {item.visitCount}</p>
                     </div>
                     <div className='info-text'>
                     <p><a href={item.shortUrl}>{item.shortUrl}</a></p>
+                    <p className='visit-count'><BsEye /> {item.visitCount}</p>
                     </div>
                 </div>
             ))}
