@@ -48,19 +48,18 @@ const ViewAllPage = () => {
             <h1 className='Auth-title'>View All</h1>
             {error && <p>{error}</p>}
 
-
             <div className='Info-title Form-label'>
+                <p>OriginalUrl</p>
                 <p>ShortUrl</p>
-                <p>Content</p>
             </div>
-            {data.map((item, index) => (
-                <div key={index} className='Info-all'>
+            {data.map((item) => (
+                <div key={item.id} className='Info-all'>
                     <div className='info-text'>
-                    <p>{item.shortUrl}</p>
-                    <p><BsEye /> {item.count}</p>
+                    <span><a href={item.originalUrl}>{item.originalUrl}</a></span>
+                    <p className='visit-count'><BsEye /> {item.visitCount}</p>
                     </div>
                     <div className='info-text'>
-                    <p>{item.content}</p>
+                    <p><a href={item.shortUrl}>{item.shortUrl}</a></p>
                     </div>
                 </div>
             ))}

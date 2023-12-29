@@ -1,30 +1,213 @@
 {
+    "error": "OK",
     "urls": [
         {
-            "shortUrl": "Test no Actyviti",
-            "content": "https://tiiAAy",
-            "count": "2"
+            "id": 3,
+            "originalUrl": "Test no Actyviti",
+            "shortUrl": "https://tiiAAy",
+            "dateCreated": "2022-12-26T07:14:18.192",
+            "expirationDate": "2023-01-25T07:14:18.192",
+            "visitCount": 0
         },
         {
-            "shortUrl": "Test no Actyviti",
-            "content": "https://tiiAAy",
-            "count": "2"
+            "id": 5,
+            "originalUrl": "https://Test yes Actyviti",
+            "shortUrl": "https://vittcv",
+            "dateCreated": "2023-12-26T09:00:31.459477",
+            "expirationDate": "2024-01-25T09:00:31.459477",
+            "visitCount": 0
         },
         {
-            "shortUrl": "Test no Actyviti",
-            "content": "https://tiiAAy",
-            "count": "2"
+            "id": 6,
+            "originalUrl": "https://Test yes Actyviti",
+            "shortUrl": "https://tiiy i",
+            "dateCreated": "2023-12-26T09:04:09.841248",
+            "expirationDate": "2024-01-25T09:04:09.841248",
+            "visitCount": 0
         },
         {
-            "shortUrl": "Test no Actyviti",
-            "content": "https://tiiAAy",
-            "count": "2"
+            "id": 8,
+            "originalUrl": "https://lantorg.com/products/obzhimnoy-instrument-ht-336g",
+            "shortUrl": "https://nhazi/",
+            "dateCreated": "2023-12-26T09:31:54.354762",
+            "expirationDate": "2024-01-25T09:31:54.354762",
+            "visitCount": 0
         },
         {
-            "shortUrl": "Test no Actyviti",
-            "content": "https://tiiAAy",
-            "count": "2"
+            "id": 9,
+            "originalUrl": "https://reserve.inoriginal.online/films/851-robocop-1987.html",
+            "shortUrl": "https://oo-eno",
+            "dateCreated": "2023-12-26T09:32:17.918683",
+            "expirationDate": "2024-01-25T09:32:17.918683",
+            "visitCount": 0
+        },
+        {
+            "id": 7,
+            "originalUrl": "https://google.com",
+            "shortUrl": "https://ooommo",
+            "dateCreated": "2023-12-26T09:30:05.481818",
+            "expirationDate": "2024-01-25T09:30:05.481818",
+            "visitCount": 2
+        },
+        {
+            "id": 11,
+            "originalUrl": "https://example-long-url",
+            "shortUrl": "https://short",
+            "dateCreated": "2016-06-22T19:10:25",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 12,
+            "originalUrl": "https://example2-long-url",
+            "shortUrl": "https://short2",
+            "dateCreated": "2016-06-22T19:10:25",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 13,
+            "originalUrl": "https://example3-long-url",
+            "shortUrl": "https://short3",
+            "dateCreated": "2016-06-22T19:10:25",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 14,
+            "originalUrl": "",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T18:29:46.780975",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 15,
+            "originalUrl": "https://test-url",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T18:32:34.271023",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 16,
+            "originalUrl": "iuhwfhwefewkjk",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T20:05:00.942591",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 17,
+            "originalUrl": "testurl",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T20:40:45.906863",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 18,
+            "originalUrl": "testurl",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T20:52:08.629329",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 19,
+            "originalUrl": "another-test-url",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T20:52:21.909539",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 20,
+            "originalUrl": "new-test-url",
+            "shortUrl": "short",
+            "dateCreated": "2023-12-27T20:54:49.690347",
+            "expirationDate": null,
+            "visitCount": 0
+        },
+        {
+            "id": 23,
+            "originalUrl": "https://www.google.com/",
+            "shortUrl": "https://wgo.e.",
+            "dateCreated": "2023-12-28T17:51:28.798154",
+            "expirationDate": "2024-01-27T17:51:28.798154",
+            "visitCount": 0
+        },
+        {
+            "id": 24,
+            "originalUrl": "https://refactoring.guru/uk/design-patterns/catalog",
+            "shortUrl": "https://dcusri",
+            "dateCreated": "2023-12-28T17:51:48.156826",
+            "expirationDate": "2024-01-27T17:51:48.156826",
+            "visitCount": 5
+        },
+        {
+            "id": 27,
+            "originalUrl": "https://Google.com",
+            "shortUrl": "https://moommm",
+            "dateCreated": "2023-12-28T18:38:38.01169",
+            "expirationDate": "2024-01-27T18:38:38.01169",
+            "visitCount": 1
+        },
+        {
+            "id": 28,
+            "originalUrl": "https://www.youtube.com/watch?v=ETyltCwtQHs",
+            "shortUrl": "https://ota/Es",
+            "dateCreated": "2023-12-28T19:06:20.843736",
+            "expirationDate": "2024-01-27T19:06:20.843736",
+            "visitCount": 0
+        },
+        {
+            "id": 29,
+            "originalUrl": "https://www.youtube.com/watch?v=ETyltCwtQHs",
+            "shortUrl": "https://clHaaw",
+            "dateCreated": "2023-12-28T19:06:29.14681",
+            "expirationDate": "2024-01-27T19:06:29.14681",
+            "visitCount": 0
+        },
+        {
+            "id": 31,
+            "originalUrl": "https://www.youtube.com/watch?v=ETyltCwtQHs",
+            "shortUrl": "https://om?yHt",
+            "dateCreated": "2023-12-28T19:06:59.273073",
+            "expirationDate": "2024-01-27T19:06:59.273073",
+            "visitCount": 0
+        },
+        {
+            "id": 30,
+            "originalUrl": "https://www.youtube.com/watch?v=ETyltCwtQHs",
+            "shortUrl": "https://Twcv/c",
+            "dateCreated": "2023-12-28T19:06:31.291349",
+            "expirationDate": "2024-01-27T19:06:31.291349",
+            "visitCount": 1
+        },
+        {
+            "id": 32,
+            "originalUrl": "https://www.youtube.com/watch?v=ETyltCwtQHs",
+            "shortUrl": "https://CeolaC",
+            "dateCreated": "2023-12-28T19:10:08.917178",
+            "expirationDate": "2024-01-27T19:10:08.917178",
+            "visitCount": 0
+        },
+        {
+            "id": 4,
+            "originalUrl": "Test yes Actyviti",
+            "shortUrl": "https://Ayttc ",
+            "dateCreated": "2023-12-26T07:14:26.490846",
+            "expirationDate": "2023-01-25T07:14:26.49",
+            "visitCount": 0
+        },
+        {
+            "id": 21,
+            "originalUrl": "https://google.com",
+            "shortUrl": "https://oomooo",
+            "dateCreated": "2023-12-28T11:21:20.043841",
+            "expirationDate": "2024-01-27T11:21:20.043841",
+            "visitCount": 1
         }
-    ],
-    "error": "OK"
+    ]
 }
