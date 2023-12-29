@@ -217,6 +217,27 @@ button {
 
 }
 
+.Info-title {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.Info-all {
+  display: flex;
+  gap: 50px;
+  position: relative;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.info-text {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid black;
+}
 
   a {
     text-decoration: none;

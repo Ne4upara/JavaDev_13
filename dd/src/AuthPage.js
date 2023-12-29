@@ -16,9 +16,10 @@ const AuthPage = () => {
 
             const { error, authToken } = response.data;
 
-            if (error === 'OK') {
+            if (error === 'OK'  && authToken) {
                 // Вход выполнен успешно
                 console.log('Успешный вход', authToken);
+                localStorage.setItem('authToken', authToken);
             } else if (error === 'INVALID_USER_NAME') {
                 setError('Имя пользователя пустое');
             } else if (error === 'INVALID_PASSWORD') {
