@@ -1,5 +1,5 @@
 // ViewAllPage.js
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import { BsEye } from "react-icons/bs";
 // import dataArr from './test.json'
@@ -9,11 +9,11 @@ const UserView = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState('');
     const [selectedOption, setSelectedOption] = useState(null);
-    const [filteredData, setFilteredData] = useState([]);
+    // const [filteredData, setFilteredData] = useState([]);
     const [originalUrl, setOriginalUrl] = useState('');
     const [description, setDescription] = useState('');
-    const fetchData = async () => {
 
+    const fetchData = useCallback(async () => {
         try {
             const authToken = localStorage.getItem('authToken');
             const headers = { Authorization: `Bearer ${authToken}` };
@@ -26,7 +26,6 @@ const UserView = () => {
 
             if (error === 'OK') {
                 setData(userUrls);
-                setFilteredData(userUrls);
             } else {
                 setError('Error fetching data');
             }
@@ -34,7 +33,7 @@ const UserView = () => {
             console.error('Unexpected error while fetching data', error);
             setError('Unexpected error while fetching data');
         }
-    };
+    }, [selectedOption]); 
     const handleRedirectClick = async (shortUrl) => {
         try {
             const response = await axios.post('http://localhost:80/api/v1/urls/view/redirect', { shortUrl });
@@ -55,7 +54,7 @@ const UserView = () => {
     useEffect(() => {
 
         fetchData();
-    }, [selectedOption]);
+    }, [fetchData]);
 
     const handleConvert = async () => {
         try {
@@ -133,7 +132,7 @@ const UserView = () => {
             const authToken = localStorage.getItem('authToken');
             const headers = { Authorization: `Bearer ${authToken}` };
 
-            const response =  await axios.post('http://localhost:80/api/v1/extension', { shortUrl });
+            const response =  await axios.post('http://localhost:80/api/v1/extension', { shortUrl }, { headers });
 
             const { error } = response.data;
 
@@ -157,7 +156,7 @@ const UserView = () => {
         <div className='App-container'>
             <h1 className='Auth-title'>View All</h1>
             {error && <p>{error}</p>}
-            {isAuthToken ?
+            {isAuthToken &&
                 <>
                     <div className='Convert-block'>
                         <form className='Form'>
@@ -218,7 +217,7 @@ const UserView = () => {
                         {data.map((item) => (
                             <div key={item.id} className='Info-all'>
                                 <div className='info-text'>
-                                    <p><a href="#" onClick={() => handleRedirectClick(item.shortUrl)}>
+                                    <p><a href="/" onClick={() => handleRedirectClick(item.shortUrl)}>
                                         {item.shortUrl}
                                     </a></p>
                                     <p><BsEye/> {item.visitCount}</p>
@@ -236,24 +235,24 @@ const UserView = () => {
                         ))}
                     </>
                 </>
-                :
-                <>
-                    {/*<div className='Info-title Form-label'>*/}
-                {/*        <p>ShortUrl</p>*/}
-                {/*        <p>OriginalUrl</p>*/}
-                {/*</div>*/}
-                {/*    {data.map((item) => (*/}
-                {/*        <div key={item.id} className='Info-all'>*/}
-                {/*            <div className='info-text'>*/}
-                {/*                <p><a href={item.shortUrl}>{item.shortUrl}</a></p>*/}
-                {/*                <p><BsEye /> {item.visitCount}</p>*/}
-                {/*            </div>*/}
-                {/*            <div className='info-text'>*/}
-                {/*                <span><a href={item.originalUrl}>{item.originalUrl}</a></span>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    ))}*/}
-                </>
+                // :
+                // <>
+                    // {/*<div className='Info-title Form-label'>*/}
+                // {/*        <p>ShortUrl</p>*/}
+                // {/*        <p>OriginalUrl</p>*/}
+                // {/*</div>*/}
+                // {/*    {data.map((item) => (*/}
+                // {/*        <div key={item.id} className='Info-all'>*/}
+                // {/*            <div className='info-text'>*/}
+                // {/*                <p><a href={item.shortUrl}>{item.shortUrl}</a></p>*/}
+                // {/*                <p><BsEye /> {item.visitCount}</p>*/}
+                // {/*            </div>*/}
+                // {/*            <div className='info-text'>*/}
+                // {/*                <span><a href={item.originalUrl}>{item.originalUrl}</a></span>*/}
+                // {/*            </div>*/}
+                // {/*        </div>*/}
+                // {/*    ))}*/}
+                // </>
             }
         </div>
     );

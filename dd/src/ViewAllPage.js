@@ -69,7 +69,7 @@ const ViewAllPage = () => {
                 <div key={item.id} className='Info-all'>
                     <div className='info-text'>
                         <p>
-                            <a href="#" onClick={() => handleRedirectClick(item.shortUrl)}>
+                            <a href="/" onClick={() => handleRedirectClick(item.shortUrl)}>
                                 {item.shortUrl}
                             </a>
                         </p>

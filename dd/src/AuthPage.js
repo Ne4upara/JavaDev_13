@@ -6,7 +6,7 @@ const AuthPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [authToken, setAuthToken] = useState('');
+    const [authTokenn, setAuthTokenn] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async () => {
@@ -21,8 +21,8 @@ const AuthPage = () => {
             if (error === 'OK'  && authToken) {
                 // Вход выполнен успешно
                 console.log('Успешный вход', authToken);
-                setAuthToken(authToken);
-                localStorage.setItem('authToken', authToken);
+                setAuthTokenn(authToken);
+                localStorage.setItem('authToken', authTokenn);
                 navigate('/userview');
             } else if (error === 'INVALID_USER_NAME') {
                 setError('Имя пользователя пустое');
