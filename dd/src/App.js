@@ -7,6 +7,7 @@ import ViewAllPage from './ViewAllPage';
 import './App.css'
 import './styles/divWithImage.css'
 import About from './About';
+import UserView from "./UserView";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     <Route path="about" element={<About />} />
                     <Route path="login" element={<AuthPage />} />
                     <Route path="register" element={<RegistrationPage />} />
+                    <Route path="userview" element={<UserView />} />
                 </Route>
             </Routes>
 

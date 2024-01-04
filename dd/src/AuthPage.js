@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AuthPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [authToken, setAuthToken] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         try {
@@ -19,7 +21,9 @@ const AuthPage = () => {
             if (error === 'OK'  && authToken) {
                 // Вход выполнен успешно
                 console.log('Успешный вход', authToken);
+                setAuthToken(authToken);
                 localStorage.setItem('authToken', authToken);
+                navigate('/userview');
             } else if (error === 'INVALID_USER_NAME') {
                 setError('Имя пользователя пустое');
             } else if (error === 'INVALID_PASSWORD') {
